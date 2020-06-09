@@ -29,7 +29,7 @@ class BottomNavigator extends StatelessWidget {
               ),
               SizedBox(width: 10),
               Icon(
-                Icons.add,
+                Icons.star,
                 color: Colors.white,
               ),
               Icon(

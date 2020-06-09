@@ -6,18 +6,18 @@ class ProfileComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20),
-      height: 400,
+      height: 450,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           TitleSection(
-            title: 'Date mate',
+            title: 'Dog mate',
           ),
-          Container(
+          Expanded(
             child: Stack(
               children: <Widget>[
                 Container(
-                  //height: 00,
+                  height: double.infinity,
                   //width: 500,
                   margin: EdgeInsets.only(top: 20),
                   decoration: BoxDecoration(
@@ -25,6 +25,7 @@ class ProfileComponent extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20),
@@ -32,36 +33,78 @@ class ProfileComponent extends StatelessWidget {
                             'https://cdn.pixabay.com/photo/2015/11/17/13/13/dogue-de-bordeaux-1047521_960_720.jpg'),
                       ),
                       SizedBox(height: 10),
-                      Text('Dog 01'),
+                      Text(
+                        'Dog 01',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
+                            color: Colors.black54),
+                      ),
                       SizedBox(height: 10),
-                      ListTile(
-                        title: Text('Madrid / Spain'),
-                      )
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.grey.shade400,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Madrid / Spain',
+                              style: TextStyle(
+                                color: Colors.grey.shade400,
+                                fontSize: 20,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.sentiment_neutral,
+                            color: Colors.grey.shade400,
+                            size: 40,
+                          ),
+                          Icon(
+                            Icons.sentiment_satisfied,
+                            color: Colors.grey.shade400,
+                            size: 40,
+                          ),
+                          Icon(
+                            Icons.sentiment_very_satisfied,
+                            color: Colors.grey.shade400,
+                            size: 40,
+                          ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
-                Center(
-                  child: Container(
-                    child: Card(
-                      color: Colors.amberAccent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                      elevation: 10,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          '3.7 mi away',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 20),
-                        ),
+                Container(
+                  alignment: Alignment.topCenter,
+                  child: Card(
+                    color: Colors.amberAccent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    elevation: 10,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        '3.7 mi away',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, fontSize: 20),
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
